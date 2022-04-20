@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700;900&display=swap");
 @font-face {
   font-family: "Bebas Neue Book";
@@ -706,6 +713,7 @@ main {
 }
 .our-works__item.load {
   display: none !important;
+  opacity: 0;
 }
 
 .our-works__link {
@@ -1048,16 +1056,16 @@ main {
             flex-direction: column;
   }
 
-  .header__title p {
+  .header__title span {
     font-size: 0.5rem;
     line-height: 0.4rem;
   }
-  .header__title p:nth-child(2) {
+  .header__title span:nth-child(2) {
     font-size: 1.8rem;
     line-height: 1.8rem;
     margin-top: 0;
   }
-  .header__title p:last-child {
+  .header__title span:last-child {
     font-size: 1.8rem;
     line-height: 1.8rem;
   }
@@ -1509,6 +1517,11 @@ main {
   color: #d8d8d8;
 }
 
+@media (max-width: 1200px) {
+  .back_to_top {
+    margin: 2.8rem 0 5.8rem;
+  }
+}
 @media (max-width: 768px) {
   .page-sites .about {
     padding-top: 1rem;
@@ -1519,6 +1532,19 @@ main {
   }
   .page-sites .about .link-nav {
     margin-bottom: 2rem;
+  }
+
+  .back_to_top {
+    margin: 2rem 0 4rem;
+  }
+  .back_to_top p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    padding: 0 1.5rem;
+  }
+  .back_to_top img {
+    width: auto;
+    height: 2rem;
   }
 }
 .header-contacts {
@@ -1792,19 +1818,19 @@ main {
 .callbackFull__list li input[type=text]::placeholder {
   color: transparent;
 }
-.callbackFull__list li input[type=mail]::-webkit-input-placeholder {
+.callbackFull__list li input[type=email]::-webkit-input-placeholder {
   color: transparent;
 }
-.callbackFull__list li input[type=mail]::-moz-placeholder {
+.callbackFull__list li input[type=email]::-moz-placeholder {
   color: transparent;
 }
-.callbackFull__list li input[type=mail]:-ms-input-placeholder {
+.callbackFull__list li input[type=email]:-ms-input-placeholder {
   color: transparent;
 }
-.callbackFull__list li input[type=mail]::-ms-input-placeholder {
+.callbackFull__list li input[type=email]::-ms-input-placeholder {
   color: transparent;
 }
-.callbackFull__list li input[type=mail]::placeholder {
+.callbackFull__list li input[type=email]::placeholder {
   color: transparent;
 }
 .callbackFull__list li input[type=tel]::-webkit-input-placeholder {

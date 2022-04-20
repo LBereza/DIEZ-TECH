@@ -139,13 +139,6 @@ $(function() {
 //----------------------------------------------
 //------------МАСКИ под INPUT-------------------
 //----------------------------------------------
-		$('#callbackFullName, #callbackName').on('keypress', function() {
-			var that = this;
-			setTimeout(function() {
-			var res = /[^а-яА-Я]\s/g.exec(that.value);
-			that.value = that.value.replace(res, '');
-			}, 0);
-		});
 		$('#callbackFullPhone').mask("+7 (999) 999-99-99");
 //----------------------------------------------
 //---КЛИКАБЕЛЬНЫЕ ПЛИТКИ С САЙТАМИ НА ГЛАВНОЙ---
@@ -181,30 +174,48 @@ $(function() {
 				} else {
 					$(".our-works__item").show();
 				}
+				//Отключение кнопки "наверх" при пустом списке
+				if($('.our-works__list').find('.our-works__item:visible').length == 0 && $('.our-works__list').find('.load').length == 0) {
+					$('.back_to_top').addClass('d-none');
+				} else if ($('.our-works__list').find('.our-works__item:visible').length !== 0 && $('.our-works__list').find('.load').length == 0) {
+					$('.back_to_top').removeClass('d-none');
+				}
 			};
 		$('.works__btn').click(filtration);
 //----------------------------------------------
-//--------ПОДГРУЗКА СТРАНИЦЫ ПОРТФОЛИО----------
+//------- ВЫВОД ЗАГРУЖЕННЫХ ЭЛЕМЕНТОВ ----------
+//---------- НА СТРАНИЦЕ ПОРТФОЛИО -------------
 //----------------------------------------------
-	$(document).ready(function () {
-			$(window).scroll(function () {
-					if($(window).scrollTop() + $(window).height() + 200 >= $(document).height()) {
-						count3();
-					}
-			})
+	function scrollTracking(){
+		var lastActiveElement = $('.our-works__item:visible').not('.load').eq(-2); //Предпоследний отображаемый ряд элементов на странице;
+		var wt = $(window).scrollTop();
+		var wh = $(window).height();
+		var et = lastActiveElement.offset().top;
+		var eh = lastActiveElement.outerHeight();
+		var dh = $(document).height();
+		//Отслеживаем высоту скролла страницы;
+		if (wt + wh >= et || wh + wt == dh || eh + et < wh ){
+			countUp3();
+		}
+	}
+
+	$(window).on('scroll', scrollTracking);
+	$(document).ready(function(){ 
+		scrollTracking();
 	});
 
-	function count3() {
+//====================
+	function countUp3() {
 		var activeFilter = $('.works__btn.active').data("tags");
 		var newItemCount = 0;
 		
 		if (activeFilter !== "all") { //Проверка активного фильтра;
 			for (let i = 0; i<3; i++) {
-				console.log($('.load').eq(i).find('.our-works__title').data("tags")) //проверка на совпадение фильтра и тега в ссылке;
+				//console.log($('.load').eq(i).find('.our-works__title').data("tags")) //проверка на совпадение фильтра и тега в ссылке;
 				//Включаем/выключаем для загруженных элементов отображение в зависимости от фильтра;
 				if ($('.load').eq(i).find('.our-works__title').data("tags") == activeFilter) {
 					$('.load').eq(i).show();
-					newItemCount++; //Увеличиваем счёт новых выведенных элементов;
+					newItemCount++; //Увеличиваем счётчик новых выведенных элементов;
 				} else {
 						$('.load').eq(i).hide();
 					}
@@ -213,25 +224,21 @@ $(function() {
 		} else {
 				//Проверка остались ли элементы "в буффере" 
 				if ($('.load').length > 0) {
-					for (let i=0;i<3;i++) {
-						newItemCount++; //Увеличиваем счёт новых выведенных элементов;
+					for (let i=0;i<5;i++) {
+						newItemCount++; //Увеличиваем счётчик новых выведенных элементов;
 						$('.load').eq(i).show();
 					}
 					$('.our-works__item.load').slice(0,3).removeClass('load'); //Отключаем признак "в буффере" для выведенных элементов;
 				} else {
 					newItemCount = 0;
 				}
+				console.log(newItemCount);
 		}
-
 		//Если новых элементов подходящих условию не найдено - включаем кнопку "наверх"
 		if (newItemCount == 0) {
 			$('.back_to_top').removeClass('d-none');
 		} 
-		console.log(newItemCount);
-		
 	}
-
-//$('.section__title').click(count3);
 
 	});
 });
