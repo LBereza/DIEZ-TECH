@@ -98,7 +98,7 @@ $(function() {
 //----------------------------------------------
 		$(function () {
 			var page = window.location.href;
-			var cur_url = '/' + page.split('/').pop();
+			var cur_url = page.split('/').pop();
 			 
 			$('.header__nav li').each(function () {
 				var link = $(this).find('a').attr('href');
@@ -196,22 +196,24 @@ $(function() {
 		//Отслеживаем высоту скролла страницы;
 		if (wt + wh >= et || wh + wt == dh || eh + et < wh ){
 			countUp3();
+			return false;
 		}
 	}
-
-	$(window).on('scroll', scrollTracking);
+	
+	$(window).on('scroll', function(){
+		event.preventDefault();
+		scrollTracking();
+	});
 	$(document).ready(function(){ 
 		scrollTracking();
 	});
 
-//====================
 	function countUp3() {
 		var activeFilter = $('.works__btn.active').data("tags");
 		var newItemCount = 0;
-		
+
 		if (activeFilter !== "all") { //Проверка активного фильтра;
 			for (let i = 0; i<3; i++) {
-				//console.log($('.load').eq(i).find('.our-works__title').data("tags")) //проверка на совпадение фильтра и тега в ссылке;
 				//Включаем/выключаем для загруженных элементов отображение в зависимости от фильтра;
 				if ($('.load').eq(i).find('.our-works__title').data("tags") == activeFilter) {
 					$('.load').eq(i).show();
@@ -237,8 +239,9 @@ $(function() {
 		//Если новых элементов подходящих условию не найдено - включаем кнопку "наверх"
 		if (newItemCount == 0) {
 			$('.back_to_top').removeClass('d-none');
-		} 
+		}
 	}
+//----------------------------------------------
 
 	});
 });
