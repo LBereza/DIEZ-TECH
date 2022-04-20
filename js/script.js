@@ -132,7 +132,7 @@ $(function() {
 //  Динамический paadding для input;
 		$(function () {
 			$('input').not("input[type='checkbox'], input[type='submit']").each(function () {
-					var labelWidth = $(this).siblings('label').width();
+					var labelWidth = $(this).siblings('label').outerWidth();
 					$(this).css("padding-left",labelWidth);
 				});
 		});
