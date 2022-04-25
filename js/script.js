@@ -65,7 +65,7 @@ $(document).ready(function() {
  	if($('html').has('.contacts-map')) {
  		//Создание метки на карте;
 		var placeIcon = L.icon({
-			iconUrl: '../img/map-icon.svg',
+			iconUrl: 'img/map-icon.svg',
 			iconSize: [29, 39]
 		});
 
