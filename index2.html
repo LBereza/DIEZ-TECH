@@ -13,126 +13,167 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			<header class="header-contacts">
-				<div class="main__container header__container px-3 px-md-0">
-					<div class="container-fluid px-0">
-						<div class="row mx-0 gy-md-2 gy-xl-0 px-3-5 px-md-0 align-items-center justify-content-between header__content">
-								<div class="col-6 col-lg-4 ps-0 header__logo">
-									<a href="index.html">
-										<img src="img/dieztech__logo.svg" alt="dieztech">
-									</a>
+			<header class="header">
+				<div class="header-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-11 offset-1 col-md-12 offset-md-0">
+								<div class="row g-0 align-items-center justify-content-between flex-wrap position-relative">
+										<div class="col-5 col-md-4">
+											<a href="index.html" class="header__logo">
+												<img src="img/dieztech__logo.svg" alt="dieztech">
+											</a>
+										</div>
+										<div class="col-2 offset-5 d-md-none">
+											<div class="header-menu__burger ms-auto">
+												<span></span>
+											</div>
+										</div>
+										<div class="col d-md-block">
+											<div class="header_menu align-items-center justify-content-between">
+												<ul class="header__nav my-2 justify-content-start justify-content-xl-end d-flex">
+													<li class="nav__link"><a href="index.html">главная</a></li>
+													<li class="nav__link"><a href="index1.html">портфолио</a></li>
+													<li class="nav__link"><a href="index.html#services">услуги</a></li>
+													<li class="nav__link"><a href="index.html#about">о нас</a></li>
+													<li class="nav__link"><a href="index2.html">Контакты</a></li>
+												</ul>
+											</div>
+										</div>
 								</div>
-								<div class="header-menu__burger">
-									<span></span>
-								</div>
-								<div class="header_menu col px-md-1 px-xl-3">
-									<ul class="header__nav my-2">
-										<li class="nav__link my-2 my-md-0"><a href="index.html">главная</a></li>
-										<li class="nav__link my-2 my-md-0"><a href="index1.html">портфолио</a></li>
-										<li class="nav__link my-2 my-md-0"><a href="#">услуги</a></li>
-										<li class="nav__link my-2 my-md-0"><a href="index.html#about">о нас</a></li>
-										<li class="nav__link my-2 my-md-0"><a href="index2.html">Контакты</a></li>
-									</ul>
-								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</header>
 			<main class="page-contacts">
 				<section class="contacts">
-						<div class="main__container px-3 px-md-0">
-								<div class="section__title">
-									<svg width="48" height="66" viewBox="0 0 48 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M30.6301 20.527H19.4496L17.2709 41.8971H28.3557L30.6301 20.527ZM34.3239 20.527L32.0528 41.8971H45.4384L45.1578 45.0957H31.7656L29.4912 66H25.7941L28.0685 45.0957H16.8946L14.7159 66H11.0188L13.2932 45.0957H0L0.283887 41.8971H13.5771L15.8482 20.527H2.46255L2.74314 17.3251H16.1353L17.9344 0H21.6315L19.8259 17.3251H30.9107L32.7097 0H36.4035L34.6078 17.3251H48L47.7128 20.527H34.3239Z" fill="white"/>
-									</svg>
-									Контакты
-								</div>
-								<div class="contacts__container d-flex flex-wrap">
-									<div class="contacts__content d-flex flex-column order-1 order-md-2">
-										<div class="d-flex flex-wrap align-items-baseline">
-											<p class="contacts-icon col-1 me-2">T</p><p class="contacts-text col-10"><a href="tel:+74012751750" class="contacts-phone">+7 (4012) 751-750</a></p>
-											<p class="contacts-icon col-1 me-2">E</p><p class="contacts-text col-10"><a href="mailto:hi@diez.io" class="contacts-mail">hi@diez.io</a></p>
-											<p class="contacts-icon col-1 me-2">А</p><p class="contacts-text col-10 col-md-9 pe-md-2">236023, г. Калининград, Советский проспект 14-16, оф. 309</p>
-										</div>
-										<form action="#" method="post" class="form-callbackFull d-flex flex-column">
-											<div class="callbackFull__title">появились вопросы?</div>
-											<ul class="callbackFull__list">
-												<li class="callbackFull__item">
-													<input type="text" id="callbackFullName" name="Name" placeholder="Имя" autocomplete="false">
-													<label for="callbackFullName" class="callbackFull__label">Имя</label>
-												</li>
-												<li class="callbackFull__item">
-													<input type="email" id="callbackFullMail" name="Mail" placeholder="E-mail" autocomplete="false">
-													<label for="callbackFullName" class="callbackFull__label">E-mail</label>
-												</li>
-												<li class="callbackFull__item">
-													<input type="tel" id="callbackFullPhone" name="Phone" placeholder="Телефон" autocomplete="false">
-													<label for="callbackFullName" class="callbackFull__label">Телефон</label>
-												</li>
-											</ul>
-											<label for="callbackFullAgreement" class="agreement">
-												Нажимая кнопку “Отправить” вы соглашаетесь с <a href="#" class="agreement-link">Пользовательским соглашением</a>
-												<input type="checkbox" id="callbackFullAgreement" name="Agreement" checked>
-												<span class="checkbox-icon"></span>
-											</label>
-											<input type="submit" value="Оставить заявку" class="callbackFull__submit">
-										</form>
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-11 offset-1 col-md-12 offset-md-0">
+									<div class="section__title">
+										<svg width="48" height="66" viewBox="0 0 48 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M30.6301 20.527H19.4496L17.2709 41.8971H28.3557L30.6301 20.527ZM34.3239 20.527L32.0528 41.8971H45.4384L45.1578 45.0957H31.7656L29.4912 66H25.7941L28.0685 45.0957H16.8946L14.7159 66H11.0188L13.2932 45.0957H0L0.283887 41.8971H13.5771L15.8482 20.527H2.46255L2.74314 17.3251H16.1353L17.9344 0H21.6315L19.8259 17.3251H30.9107L32.7097 0H36.4035L34.6078 17.3251H48L47.7128 20.527H34.3239Z" fill="white"/>
+										</svg>
+										Контакты
 									</div>
-									<div class="map contacts-map p-0 order-2 order-md-1" id="contacts-map"></div>
 								</div>
-								
+								<div class="col-11 col-md-12">
+									<div class="contacts__container d-flex flex-wrap">
+										<div class="contacts__content d-flex flex-column order-1 order-md-2">
+											<div class="container-fluid g-0">
+												<div class="row g-0 flex-wrap">
+													<div class="col-1 mb-md-3">
+														<p class="contacts-icon">T</p>
+													</div>
+													<div class="col-10 mb-md-3 mt-auto">
+														<a href="tel:+74012751750" class="contacts-text">+7 (4012) 751-750</a>
+													</div>
+														<div class="col-12"></div>
+													<div class="col-1 mb-md-3">
+														<p class="contacts-icon">E</p>
+													</div>
+													<div class="col-10 mb-md-3 mt-auto">
+														<a href="mailto:hi@diez.io" class="contacts-text">hi@diez.io</a></p>
+													</div>
+														<div class="col-12"></div>
+													<div class="col-1 mb-md-3">
+														<p class="contacts-icon">A</p>
+													</div>
+													<div class="col-10 mt-auto">
+														<p class="contacts-text adress">236023, г. Калининград, Советский проспект 14-16, оф. 309</p>
+													</div>
+												</div>
+											</div>
+												
+											<form action="#" method="post" class="form-callbackFull d-flex flex-column">
+												<div class="callbackFull__title">появились вопросы?</div>
+												<ul class="callbackFull__list">
+													<li class="callbackFull__item">
+														<input type="text" id="callbackFullName" name="Name" placeholder="Имя" autocomplete="false">
+														<label for="callbackFullName" class="callbackFull__label">Имя</label>
+													</li>
+													<li class="callbackFull__item">
+														<input type="email" id="callbackFullMail" name="Mail" placeholder="E-mail" autocomplete="false">
+														<label for="callbackFullName" class="callbackFull__label">E-mail</label>
+													</li>
+													<li class="callbackFull__item">
+														<input type="tel" id="callbackFullPhone" name="Phone" placeholder="Телефон" autocomplete="false">
+														<label for="callbackFullName" class="callbackFull__label">Телефон</label>
+													</li>
+												</ul>
+												<label for="callbackFullAgreement" class="agreement">
+													Нажимая кнопку “Отправить” вы соглашаетесь с <a href="#" class="agreement-link">Пользовательским соглашением</a>
+													<input type="checkbox" id="callbackFullAgreement" name="Agreement" checked>
+													<span class="checkbox-icon"></span>
+												</label>
+												<input type="submit" value="Оставить заявку" class="callbackFull__submit">
+											</form>
+										</div>
+										<div class="map contacts-map p-0 order-2 order-md-1" id="contacts-map"></div>
+									</div>
+								</div>
+							</div>
 						</div>
 				</section>
 			</main>
 			<footer class="footer">
-				<div class="main__container footer__container">
-					<div class="container-fluid desktop">
-						<div class="row">
-								<div class="col-4 p-0 footer__logo">
-									<a href="index.html">
+				<div class="footer-top desktop">
+					<div class="container">
+						<div class="row g-0 justify-content-between flex-wrap position-relative">
+								<div class="col-5 col-md-4">
+									<a href="index.html" class="footer__logo">
 										<img src="img/dieztech__logo.svg" alt="dieztech">
 									</a>
 								</div>
-								<div class="col py-2 px-0 py-xl-0 footer__menu">
-									<ul class="footer__nav">
-										<li class="nav__link my-2 my-md-0"><a href="index.html">главная</a></li>
-										<li class="nav__link my-2 my-md-0"><a href="index1.html">портфолио</a></li>
-										<li class="nav__link my-2 my-md-0"><a href="#">услуги</a></li>
-										<li class="nav__link my-2 my-md-0"><a href="index.html#about">о нас</a></li>
-										<li class="nav__link my-2 my-md-0"><a href="index2.html">Контакты</a></li>
-									</ul>
+								<div class="col d-md-block">
+									<div class="footer__menu align-items-center justify-content-between">
+										<ul class="footer__nav my-2 justify-content-start d-flex">
+											<li class="nav__link"><a href="index.html">главная</a></li>
+											<li class="nav__link"><a href="index1.html">портфолио</a></li>
+											<li class="nav__link"><a href="index.html#services">услуги</a></li>
+											<li class="nav__link"><a href="index.html#about">о нас</a></li>
+											<li class="nav__link"><a href="index2.html">Контакты</a></li>
+										</ul>
+									</div>
 								</div>
 								<div class="col-md-12 gy-3"></div>
-								<div class="col-4 p-0 footer__copyright">
-									2020. Все права защиены. <br>Разработано <a href="/"><span>#dieztech</span></a>
+								<div class="col-4">
+									<div class="made-by">2020. Все права защиены. <br>Разработано <a href="/">#dieztech</a></div>
 								</div>
-								<div class="col p-0 footer__contacts">
-									<p>236023, г. Калининград, Советский пр-т,14-16 (Мелиоратор), офис 309</p>
-									<p class="py-2 px-0 py-xl-0"><a href="tel:+74012751750" class="contacts-phone">+7 (4012) 751 750</a></p> 
+								<div class="col">
+									<div class="footer__contacts">
+										<p>236023, г. Калининград, Советский пр-т,14-16 (Мелиоратор), офис 309</p>
+										<p class="py-2 px-0 py-xl-0"><a href="tel:+74012751750" class="contacts-phone">+7 (4012) 751 750</a></p>
+									</div>
 								</div>
 						</div>
 					</div>
-					<div class="container-fluid mobile p-0">
-						<div class="container-fluid p-0 ps-3">
-							<div class="row footer__contacts">
+				</div>
+				<div class="footer-top mobile">
+					<div class="container">
+						<div class="row">
 								<div class="col-12"><a href="tel:+74012751750" class="contacts-phone">+7 (495) 118-07-46</a></div>
 								<div class="col-12"><a href="tel:+74012751750" class="contacts-phone">+7 (495) 118-07-46</a></div>
-								<div class="col-12 contacts-adress py-3">236016, Россия, г. Калининград, ул. Фрунзе, 89</div>
-								<div class="col-12 contacts-mail"><a href="mailto:hi@diez.io" class="contacts-mail">hi@diez.io</a></div>
-							</div>
+								<div class="col-12 py-3">236016, Россия, г. Калининград, ул. Фрунзе, 89</div>
+								<div class="col-12"><a href="mailto:hi@diez.io" class="contacts-mail">hi@diez.io</a></div>
 						</div>
-						<div class="row m-0 my-3 p-0 footer-map__container">
-							<div class="map footer-map p-0" id="footer-map"></div>
-						</div>
-						<div class="container-fluid p-0 ps-3">
-							<div class="row footer__copyright ">
+					</div>
+					<div class="footer-map__container">
+						<div class="map footer-map p-0" id="footer-map"></div>
+					</div>
+					<div class="container">
+						<div class="row">
 								<div class="col-12 mb-1">
-										©  Все права защищены  2021. 
+										<div class="footer__copyright">
+											©  Все права защищены  2021.
+										</div>
 								</div>
 								<div class="col-12">
-										Разработано <a href="/"><img src="img/dieztech__logo.svg"></a>
+										<div class="made-by">
+											Разработано <a href="/"><img src="img/dieztech__logo.svg"></a>
+										</div>
 								</div>
-							</div>
 						</div>
 					</div>
 				</div>

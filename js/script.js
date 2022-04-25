@@ -65,7 +65,7 @@ $(document).ready(function() {
  	if($('html').has('.contacts-map')) {
  		//Создание метки на карте;
 		var placeIcon = L.icon({
-			iconUrl: '../../img/map-icon.svg',
+			iconUrl: '../img/map-icon.svg',
 			iconSize: [29, 39]
 		});
 
@@ -89,8 +89,6 @@ $(document).ready(function() {
 	}
  });
 
-
-
 $(function() {
 	jQuery(function($) {
 //----------------------------------------------
@@ -113,7 +111,7 @@ $(function() {
 //----------------------------------------------
 		$(document).ready(function() {
 			$('.header-menu__burger').click(function(event) {
-				$('.header-menu__burger').toggleClass('active').siblings('.header_menu').toggleClass('active');
+				$('.header-menu__burger, .header-top, .header_menu').toggleClass('active');
 				$('body').toggleClass('lock');
 			});
 		});
@@ -121,7 +119,7 @@ $(function() {
 		$(function() {
 			$(window).on('resize', function(){
 				if(innerWidth > 750 && $('body').hasClass('lock')) {
-					$('.header-menu__burger').toggleClass('active').siblings('.header_menu').toggleClass('active');
+					$('.header-menu__burger, .header-top, .header_menu').toggleClass('active');
 					$('body').toggleClass('lock');
 				}
 			});
@@ -242,6 +240,44 @@ $(function() {
 		}
 	}
 //----------------------------------------------
+//---------------ИЗМЕНЕНИЕ СТИЛЯ ---------------
+//----------------------------------------------
 
+	function stripWidth() {
+		var ww = $(window).width();
+		var cw = $('.container').width();
+
+		//Ширина элемента strip-short для десктопа и планшета;
+		// 30 padding дива "container"
+		var stripShortWidth = (ww - cw + 30) / 2;
+		//Ширина элемента strip-long для десктопа и планшета;
+		// 30 padding дива "container"
+		var stripLongWidth = ((ww - cw + 30) / 2) + cw;
+
+		$('.strip.short').css('width', stripShortWidth);
+		$('.strip.long').css('width', stripLongWidth);
+		console.log(scrollSize);
+	}
+
+	$(document).ready(function(){
+				if(innerWidth < 768) {
+					$('.strip.short').css('width', '13.7%');
+					$('.strip.long').css('width', 'calc(100vw - 13.7%)');
+				} else {
+					stripWidth();
+				}
+			});
+
+	$(window).on('resize', function(){
+				if(innerWidth < 768) {
+					$('.strip.short').css('width', '13.7%');
+					$('.strip.long').css('width', 'calc(100vw - 13.7%)');
+				} else {
+					stripWidth();
+				}
+			});
+
+//----------------------------------------------
+//----------------------------------------------
 	});
 });
