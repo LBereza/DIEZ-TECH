@@ -1500,6 +1500,13 @@ main {
   padding-top: 0.7rem;
 }
 
+a.contacts-text:hover {
+  color: #171717;
+}
+a.contacts-text:active {
+  color: #bababa;
+}
+
 .form-callbackFull {
   margin-top: 3.5rem;
 }
